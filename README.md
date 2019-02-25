@@ -83,8 +83,10 @@ python ./dataset/resize.py
   python train.py --layers 50 --batch 16 --val 0 --recover 272 --pretrain 0  
   ```
 - Performance
+
+
 | Key | Value | 
-| :-------- |:-------- | 
+| :--- |:--- | 
 | Method | ResNet50-Preact | 
 |Language|Python with Tensorflow|
 |Pretrain weight|ImageNet|
@@ -93,6 +95,8 @@ python ./dataset/resize.py
 |Validation set accuracy|96.72%|
 |Submission time|2019/1/18|
 |Result|96.72%|
+
+
 - [Other performance](https://hackmd.io/mVVx1qtNSgWwuu_1w9piXg?both)
 
 
@@ -329,8 +333,7 @@ optional arguments:
 
 
 ## Reference
-- [[1] Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun. Deep Residual Learning for Image Recognition.]
-(https://arxiv.org/abs/1512.03385)
+- [[1] Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun. Deep Residual Learning for Image Recognition.](https://arxiv.org/abs/1512.03385)
 - [[2] Tensorflow Slim](https://github.com/tensorflow/models/blob/master/research/slim/nets/resnet_v2.py)
 
 
