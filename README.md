@@ -199,6 +199,8 @@ python ./dataset/resize.py
   python train.py --layers 50 --batch 16 --val 0 --recover 272 --pretrain 0  
   ```
 - Performance
+
+
 | Key | Value | 
 | :-------- |:-------- | 
 | Method | ResNet50-Preact | 
@@ -327,9 +329,9 @@ optional arguments:
 
 
 ## Reference
-[[1] Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun. Deep Residual Learning for Image Recognition.]
+- [[1] Kaiming He, Xiangyu Zhang, Shaoqing Ren, Jian Sun. Deep Residual Learning for Image Recognition.]
 (https://arxiv.org/abs/1512.03385)
-[[2] Tensorflow Slim](https://github.com/tensorflow/models/blob/master/research/slim/nets/resnet_v2.py)
+- [[2] Tensorflow Slim](https://github.com/tensorflow/models/blob/master/research/slim/nets/resnet_v2.py)
 
 
 
