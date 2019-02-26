@@ -145,7 +145,7 @@ python test.py --layers 50 --batch 1 --recover 299
 ## Training on your own dataset
 - Put the images of training set into {PATH}/ResNet/train/{class_name}/
 - If you have testing set, put it into {PATH}/ResNet/test/
-- Modify the class name in resize
+- Modify the class name in resize.py
 
 
 ## Usage
