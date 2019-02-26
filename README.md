@@ -71,126 +71,7 @@ unzip test.zip
 python ./dataset/resize.py
 ```
 
-### Download pretrain model training on plant seeding dataset
-- [Pretrain model](https://drive.google.com/drive/u/1/folders/144a74QFYxFyRvCxoHQXTal33YHjpDVxD)
-  - Move files from resnet_v2_50_val to '{PATH}/models/resnet_v2_50'
-- Run test
-  ```
-  python test.py --layers 50 --batch 1 --recover 272  
-  ```
-- Run train (See Training for more details)
-  ```
-  python train.py --layers 50 --batch 16 --val 0 --recover 272 --pretrain 0  
-  ```
-- Performance
-
-
-| Key | Value | 
-| :--- |:--- | 
-| Method | ResNet50-Preact | 
-|Language|Python with Tensorflow|
-|Pretrain weight|ImageNet|
-|Dataset|20% to validation|
-|Best epoch|272|
-|Validation set accuracy|96.72%|
-|Submission time|2019/1/18|
-|Result|96.72%|
-
-
-- [Other performance](https://hackmd.io/mVVx1qtNSgWwuu_1w9piXg?both)
-
-
-## Training (See Usage for more details)
-### Download pretrain weights of ImageNet
-- [tensorflow/models](https://github.com/tensorflow/models/tree/master/research/slim)
-  - Put resnet_v2_*.ckpt in 'pretrain_models'
-### Train network
-- Set parameters
-  - set number of layers for ResNet
-  - set loading pretrain weights of ImageNet or not
-  - set adding validation set into training set or not
-  - Check Usage for other parameters 
-```
-python train.py --layers [50|101|152] --pretrain [0|1] --val [0|1]    
-```
-- For example
-```
-python train.py --layers 50 --pretrain 1 --val 0    
-```
-
-# ResNet-50/101/152
-There are two types of ResNet in **Deep Residual Learning for Image Recognition**, by Kaiming He et al. One for ImageNet and 
-another for CIFAR-10. 
-
-I had implemented the **ResNet-50/101/152 (ImageNet one)** by Python with Tensorflow in this repo. You can train my 
-ResNet-50/101/152 without pretrain weights or load the pretrain weights of ImageNet. I had trained and tested my
-ResNet-50/101/152 on Kaggle Plant Seedings Classification.
-
-
-## My Environment
-### Environment 1
-- Operating System:
-  - Arch Linux 4.20.7-1
-- Memory
-  - 64GB
-- CUDA:
-  - CUDA V10.0.130 
-- CUDNN:
-  - CUDNN 7.0.5-2
-- GPU:
-  - GTX 1070 8G
-- Nvidia driver:
-  - 390.25
-- Python:
-  - python 3.6.4
-- Python package:
-  - tqdm, bs4, opencv-python, pydensecrf, cython...
-- Tensorflow:
-  - tensorflow-gpu 1.5.0
-
-
-## Downloading the plant seeding dataset from Kaggle
-- [Plant seeding dataset](https://www.kaggle.com/c/plant-seedlings-classification/data)
-
-## Setup Dataset
-### My directory structure
-```
-./ResNet/
-├── dataset
-├── models
-└── pretrain_models
-```
-### Plant seeding dataset directory structure
-```
-./train/
-├── Black-grass
-├── Charlock
-├── Cleavers
-├── Common Chickweed
-├── Common wheat
-├── Fat Hen
-├── Loose Silky-bent
-├── Maize
-├── Scentless Mayweed
-├── Shepherds Purse
-├── Small-flowered Cranesbill
-└── Sugar beet
-```
-- Put train.zip and test.zip (Plant seeding dataset) into {PATH}/ResNet-PreAct/ResNet/dataset/
-```
-mv {PATH}/train.zip {PATH}/ResNet-PreAct/ResNet/dataset/
-mv {PATH}/test.zip {PATH}/ResNet-PreAct/ResNet/dataset/
-```
-- Unzip train.zip and test.zip to the {PATH}/ResNet-PreAct/ResNet/dataset
-```
-unzip train.zip
-unzip test.zip
-```
-- Resize and split the dataset into train, val and test
-```
-python ./dataset/resize.py
-```
-
+## Demo (See Usage for more details)
 ### Download pretrain model training on plant seeding dataset
 - [Pretrain model](https://drive.google.com/drive/u/1/folders/144a74QFYxFyRvCxoHQXTal33YHjpDVxD)
   - Move files from resnet_v2_50_val to '{PATH}/models/resnet_v2_50'
@@ -215,6 +96,7 @@ python ./dataset/resize.py
 |Validation set accuracy|96.72%|
 |Submission time|2019/1/18|
 |Result|96.72%|
+
 - [Other performance](https://hackmd.io/mVVx1qtNSgWwuu_1w9piXg?both)
 
 
@@ -263,6 +145,7 @@ python test.py --layers 50 --batch 1 --recover 299
 ## Training on your own dataset
 - Put the images of training set into {PATH}/ResNet/train/{class_name}/
 - If you have testing set, put it into {PATH}/ResNet/test/
+- Modify the class name in resize
 
 
 ## Usage
