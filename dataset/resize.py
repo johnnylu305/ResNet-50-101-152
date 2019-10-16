@@ -10,17 +10,17 @@ dir__ = ["Black-grass", "Charlock", "Cleavers", "Common Chickweed",
          "Scentless Mayweed", "Shepherds Purse", "Small-flowered Cranesbill",
          "Sugar beet"]
 
-dir_ = "./dataset/train"
+dir_ = "../train"
 
-path = './dataset/train_resize'
+path = '../train_resize'
 if not os.path.isdir(path):
     os.mkdir(path)
 
-path2 = './dataset/val_resize'
+path2 = '../val_resize'
 if not os.path.isdir(path2):
     os.mkdir(path2)
 
-path3 = './dataset/val2_resize'
+path3 = '../val2_resize'
 if not os.path.isdir(path3):
     os.mkdir(path3)
 
@@ -52,9 +52,9 @@ for l, j in enumerate(dir__):
                 img2 = img.resize((256, int(h*(256.0/w))), PIL.Image.LANCZOS)
             img2.convert('RGB').save(save_path3)
 
-dir_ = "./dataset/test"
+dir_ = "../test"
 
-path = './dataset/test_resize'
+path = '../test_resize'
 if not os.path.isdir(path):
     os.mkdir(path)
 
