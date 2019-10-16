@@ -73,6 +73,9 @@ def augmentation(img):
         # random crop
         shift1 = random.randint(0, h-HEIGHT)
         shift2 = random.randint(0, w-WIDTH)
+        # If Image size is smaller than network size
+        #shift1 = random.randint(0, abs(h-HEIGHT))
+        #shift2 = random.randint(0, abs(w-WIDTH))
         img_.append(img[i][shift1:HEIGHT+shift1, shift2:WIDTH+shift2][:])
         # flip
         if random.randint(0, 1) == 0:
@@ -89,6 +92,9 @@ def crop_center(img):
         # random crop
         shift1 = int((h-HEIGHT)/2)
         shift2 = int((w-WIDTH)/2)
+        # If Image size is smaller than network size
+        #shift1 = int(abs((h-HEIGHT))/2)
+        #shift2 = int(abs((w-WIDTH))/2)
         img_.append(img[i][shift1:HEIGHT+shift1, shift2:WIDTH+shift2][:])
     return np.asarray(img_)
 
