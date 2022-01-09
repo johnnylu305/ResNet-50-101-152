@@ -73,7 +73,7 @@ python ./dataset/resize.py
 
 ## Demo (See Usage for more details)
 ### Download pretrain model training on plant seeding dataset
-- [Pretrain model](https://drive.google.com/drive/u/1/folders/144a74QFYxFyRvCxoHQXTal33YHjpDVxD)
+- [Pretrain model](https://drive.google.com/drive/folders/1BLMyijyADHRtMUzuvk4MPfBeDLAMbuue?usp=sharing)
   - Move files from resnet_v2_50_val to '{PATH}/models/resnet_v2_50'
 - Run test
   ```
